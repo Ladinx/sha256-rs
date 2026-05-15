@@ -111,6 +111,8 @@ pub(crate) fn compress_block(state: &mut [u32; 8], block: &[u8; 64]) {
 /// Ele processa blocos completos, em seguida, adiciona o bit '1' (byte 0x80) e zeros de padding.
 /// Se não houver espaço suficiente no último bloco para o tamanho da mensagem, um bloco extra é criado.
 /// Por fim, adiciona o tamanho original e retorna o hash de 32 bytes finalizado.
+
+#[cfg(test)]
 pub fn compute_sha256(data: &[u8]) -> [u8; 32] {
     let mut state = H256_256;
     let length_in_bits = (data.len() as u64).wrapping_mul(8);
@@ -242,7 +244,6 @@ impl Sha256 {
         result
     }
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
