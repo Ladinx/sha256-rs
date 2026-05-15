@@ -1,4 +1,4 @@
-# SHA-256
+# SHA-256 e Autenticador
 Projeto da aula de Criptografia ministrada pelo Prof. Escobar
 
 Gera hashes SHA-256 de arquivos e verifica sua autenticidade comparando com uma hash fornecida.
